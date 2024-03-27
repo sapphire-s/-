@@ -1,0 +1,44 @@
+{
+    "database": {
+      "type": "mysql",
+      "host": "127.0.0.1:3306",
+      "name": "union_oauth",
+      "user": "root",
+      "passwd": "123456",
+      "charset": "utf8mb4",
+      "parsetime": "True"
+    },
+    "server": {
+      "addr": 11111
+    },
+    "jwt": {
+      "issuer": "https://example.com/api",
+      "private_key_path":"./pemKey/privateKey.pem",
+      "public_key_path":"./pemKey/publicKey.pem"
+    },
+    "redis": {
+      "addr": "localhost:6379",
+      "passwd": "123456",
+      "db": 0
+    },
+    "feishu": {
+      "app_id": "",
+      "app_secret": "",
+      "base_url": "https://open.feishu.cn/open-apis/authen/v1/authorize?",
+      "redirect_uri":"https://example.com/feishu/code",
+      "_comment":"以下两项是前端地址",
+      "bind_uri": "https://auth.example.com/bind?unionid=", 
+      "login_uri": "https://auth.example.com/login?token="
+    },
+    "wellKnown": {
+      "AuthorizationEndpoint": "https://example.com/api/authorize",
+      "TokenEndpoint":         "https://example.com/api/token",
+      "UserinfoEndpoint":      "https://example.com/api/info",
+      "JwksUri": "https://example.com/api/jwks",
+      "SubjectTypesSupported": ["public"],
+      "IdTokenSigningAlgValuesSupported": ["RS256"],
+      "ResponseTypesSupported": ["code"],
+      "ScopesSupported": ["openid","offline_access"]
+    }
+  
+  }
